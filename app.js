@@ -1,4 +1,3 @@
-const Employee = require('./lib/Employee');
 const Engineer = require('./lib/engineer');
 const Intern = require('./lib/intern');
 const Manager = require('./lib/manager');
@@ -14,12 +13,19 @@ inquirer.prompt([
 ]).then(answers => {
     const role = answers.title.toLowerCase()
     if (role === 'manager') {
-        new Manager();
+        const newManager = new Manager();
+        newManager.getName();
     } else if (role === 'engineer') {
-        new Engineer();
+        const newEngineer = new Engineer();
+        newEngineer.getName();
     } else if (role === 'intern') {
-        new Intern();
+        const newIntern = new Intern();
+        newIntern.getName();
     } else {
         return console.log('error')
     }
+    
 })
+
+
+
